@@ -31,6 +31,10 @@ module TogglV8
       get "workspaces/#{workspace_id}/users"
     end
 
+    def workspace_users(workspace_id)
+      get "workspaces/#{workspace_id}/workspace_users"
+    end
+
     def tasks(workspace_id, params={})
       active = params.has_key?(:active) ? "?active=#{params[:active]}" : ""
       get "workspaces/#{workspace_id}/tasks#{active}"
